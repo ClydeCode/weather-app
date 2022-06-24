@@ -5,29 +5,29 @@ module.exports = {
   mode: 'production',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
-      rules: [
-        {
-            test: /\.css$/i,
+    rules: [
+      {
+        test: /\.css$/i,
 
-            use: ['style-loader', 'css-loader'],
-          },
-          {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
-    
-            type: 'asset/resource',
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
 
-            generator: {
-              filename: 'icons/[hash][ext][query]'
-            }
-          },
-          {
-            test: /\.(woff|woff2|eot|ttf|otf)$/i,
-    
-            type: 'asset/resource'
-        }
-      ]
-  }
+        type: 'asset/resource',
+
+        generator: {
+          filename: 'icons/[hash][ext][query]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+
+        type: 'asset/resource',
+      },
+    ],
+  },
 };
