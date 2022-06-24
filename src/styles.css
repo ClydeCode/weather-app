@@ -21,3 +21,41 @@ body {
     color: white;
     font-size: .9rem;
 }
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 40px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    margin-top: 180px;
+    position: relative;
+    left: 700px;
+}
+
+.details {
+    position: relative;
+    left: 750px;
+    font-size: 5rem;
+    color: white;
+    margin-top: 40px;
+}
+
+.sub-details {
+    font-size: 1rem;
+    height: 60px;
+    width: 120px;
+    line-height: 23px;
+}
+
+.city {
+    color: white;
+    position: relative;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
