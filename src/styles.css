@@ -5,4 +5,19 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+#search_field {
+    align-self: center;
+    margin-top: 15px;
+    padding: 7px;
+    padding-left: 10px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    color: white;
+    font-size: .9rem;
 }
