@@ -11,6 +11,7 @@ export default async function getData(city) {
   const obj = {
     name: data.name,
     weather: data.weather[0].main,
+    icon: data.weather[0].icon,
     temp: data.main.temp,
     feels: data.main.feels_like,
     wind: data.wind.speed,
