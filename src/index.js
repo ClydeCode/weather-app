@@ -27,6 +27,8 @@ async function setDetails(city) {
   setSubDetails(obj.feels, obj.wind, obj.humidity);
 }
 
+setDetails('Vilnius');
+
 searchField.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     setDetails(e.target.value);
