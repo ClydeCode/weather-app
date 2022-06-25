@@ -1,5 +1,5 @@
 async function getInfo(city) {
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=341fe8633e701e35777d460e90f2e203`);
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=341fe8633e701e35777d460e90f2e203&units=metric`);
   const json = response.json();
 
   return json;
@@ -13,6 +13,7 @@ export default async function getData(city) {
     weather: data.weather[0].main,
     temp: data.main.temp,
     feels: data.main.feels_like,
+    wind: data.wind.speed,
     humidity: data.main.humidity,
   };
 
