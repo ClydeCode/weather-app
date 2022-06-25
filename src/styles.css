@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(./assets/images/universe.jpg);
+    background-image: url(./assets/images/autumn_forest.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,7 +11,8 @@ body {
 
 #search_field {
     align-self: center;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-right: 150px;
     padding: 7px;
     padding-left: 10px;
     width: 350px;
@@ -27,7 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 40px;
+    margin-top: 550px;
+    left: -150px;
 }
 
 img {
