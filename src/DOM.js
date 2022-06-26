@@ -37,7 +37,7 @@ function setTemp(value) {
 }
 
 function setSubDetails(feels, wind, humidity) {
-  subDetails.innerHTML = `feels: ${Math.round(feels)}${tempMeasurement} wind: ${Math.round(wind)} ${windMeasurement} humidity: ${humidity}%`;
+  subDetails.innerHTML = `feels: ${Math.round(feels)}${tempMeasurement} wind: ${(wind.toFixed(1))} ${windMeasurement} humidity: ${humidity}%`;
 }
 
 function changeIcon(type) {
@@ -49,10 +49,10 @@ function setMeasurement(value) {
 
   if (value === '°C') {
     tempMeasurement = '°F';
-    windMeasurement = 'mp/h';
+    windMeasurement = 'mph';
   } else {
     tempMeasurement = '°C';
-    windMeasurement = 'km/h';
+    windMeasurement = 'm/s';
   }
 }
 
