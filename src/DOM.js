@@ -2,6 +2,10 @@ const city = document.querySelector('.city');
 const temperature = document.querySelector('.temperature');
 const subDetails = document.querySelector('.sub-details');
 const icon = document.querySelector('img');
+const optionalTemp = document.querySelector('.optional');
+
+let tempMeasurement = '°C';
+let windMeasurement = 'km/h';
 
 const icons = {
   '01d': './icons/5c6aa2edc37bc31f0168.png',
@@ -29,17 +33,29 @@ function setCity(name) {
 }
 
 function setTemp(value) {
-  temperature.innerHTML = `${Math.round(value)}°C`;
+  temperature.innerHTML = `${Math.round(value)}${tempMeasurement}`;
 }
 
 function setSubDetails(feels, wind, humidity) {
-  subDetails.innerHTML = `feels: ${Math.round(feels)}°C, wind: ${Math.round(wind)} km/h, humidity: ${humidity}%`;
+  subDetails.innerHTML = `feels: ${Math.round(feels)}${tempMeasurement} wind: ${Math.round(wind)} ${windMeasurement} humidity: ${humidity}%`;
 }
 
 function changeIcon(type) {
   icon.src = icons[type];
 }
 
+function setMeasurement(value) {
+  optionalTemp.innerHTML = value;
+
+  if (value === '°C') {
+    tempMeasurement = '°F';
+    windMeasurement = 'mp/h';
+  } else {
+    tempMeasurement = '°C';
+    windMeasurement = 'km/h';
+  }
+}
+
 export {
-  setCity, setTemp, setSubDetails, changeIcon,
+  setCity, setTemp, setSubDetails, changeIcon, setMeasurement,
 };

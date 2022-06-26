@@ -13,13 +13,18 @@ import './assets/icons/13d.png';
 import './assets/icons/50d.png';
 import getData from './weather';
 import {
-  changeIcon, setCity, setSubDetails, setTemp,
+  changeIcon, setCity, setMeasurement, setSubDetails, setTemp,
 } from './DOM';
 
 const searchField = document.querySelector('#search_field');
+const optionalTemp = document.querySelector('.optional');
 
-async function setDetails(city) {
-  const obj = await getData(city);
+let measurement = 'metric';
+let currentCity = 'Vilnius';
+
+async function setDetails(city, type) {
+  currentCity = city;
+  const obj = await getData(city, type);
 
   setCity(obj.name);
   setTemp(obj.temp);
@@ -27,10 +32,26 @@ async function setDetails(city) {
   setSubDetails(obj.feels, obj.wind, obj.humidity);
 }
 
-setDetails('Vilnius');
+function detectVisualMeasurement() {
+  if (measurement === 'metric') setMeasurement('°F');
+  else { setMeasurement('°C'); }
+}
+
+function changeMeasurement() {
+  if (measurement === 'metric') measurement = 'imperial';
+  else { measurement = 'metric'; }
+
+  setDetails(currentCity, measurement);
+  detectVisualMeasurement();
+}
+
+setDetails(currentCity, measurement);
+detectVisualMeasurement();
 
 searchField.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    setDetails(e.target.value);
+    setDetails(e.target.value, measurement);
   }
 });
+
+optionalTemp.addEventListener('click', (changeMeasurement));
