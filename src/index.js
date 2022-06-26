@@ -23,8 +23,8 @@ let measurement = 'metric';
 let currentCity = 'Vilnius';
 
 async function setDetails(city, type) {
-  currentCity = city;
   const obj = await getData(city, type);
+  currentCity = city;
 
   setCity(obj.name);
   setTemp(obj.temp);
